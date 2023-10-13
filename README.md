@@ -2,7 +2,7 @@
 The keras model is created by training [SmallerVGGNet](model.png) from scratch on around 2200 face images (~1100 for each class). Face region is cropped by applying `face detection` using `cvlib` on the images gathered from Google Images. It acheived around 96% training accuracy and ~90% validation accuracy. (20% of the dataset is used for validation)
 
 ## Update :
-Checkout the gender detection functionality implemented in [cvlib](https://github.com/arunponnusamy/cvlib) which can be accessed through a single function call `detect_gender()`. 
+Checkout the gender detection functionality implemented in [cvlib](https://github.com/arunponnusamy/cvlib) which can be accessed through a single function call `detect_gender()`.
 
 ## Python packages
 * numpy
@@ -17,11 +17,11 @@ Install the required packages by executing the following command.
 
 `$ pip install -r requirements.txt`
 
-**Note: Python 2.x is not supported** 
+**Note: Python 2.x is not supported**
 
 Make sure `pip` is linked to Python 3.x  (`pip -V` will display this info).
 
-If `pip` is linked to Python 2.7. Use `pip3` instead. 
+If `pip` is linked to Python 2.7. Use `pip3` instead.
 `pip3` can be installed using the command `sudo apt-get install python3-pip`
 
 Using **Python virtual environment** is highly recommended.
@@ -43,7 +43,7 @@ When you run the script for the first time, it will download the pre-trained mod
 ![](sample_output.jpg)
 
 ## Training
-You can download the dataset I gathered from Google Images from this [link](https://github.com/arunponnusamy/gender-detection-keras/releases/download/v0.1/gender_dataset_face.zip) and train the network from scratch on your own if you are interested. You can add more images and play with the hyper parameters to experiment different ideas. 
+You can download the dataset I gathered from Google Images from this [link](https://github.com/arunponnusamy/gender-detection-keras/releases/download/v0.1/gender_dataset_face.zip) and train the network from scratch on your own if you are interested. You can add more images and play with the hyper parameters to experiment different ideas.
 
 ### Additional packages
 * scikit-learn
