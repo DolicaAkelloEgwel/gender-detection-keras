@@ -2,3 +2,6 @@ pre-trained
 gender_detection.jpg
 drive/MyDrive/Screenshots
 multiple.jpg
+# pixi environments
+.pixi/*
+!.pixi/config.toml
