@@ -2,7 +2,7 @@
 # website: https://www.arunponnusamy.com
 
 # import necessary packages
-from keras.preprocessing.image import img_to_array
+from tensorflow.keras.utils import img_to_array
 from keras.models import load_model
 from keras.utils import get_file
 import numpy as np
