@@ -22,7 +22,7 @@ model_path = get_file(
 )
 
 # read input image
-image = cv2.imread("multiple.jpg")
+image = cv2.imread("sample_input.jpg")
 
 if image is None:
     print("Could not read input image")
