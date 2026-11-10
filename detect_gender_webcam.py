@@ -11,6 +11,8 @@ import cv2
 import os
 import cvlib as cv
 
+CLASSES = ("man", "woman")
+
 # download pre-trained model file (one-time download)
 dwnld_link = "https://github.com/arunponnusamy/cvlib/releases/download/v0.2.0/gender_detection.model"
 model_path = get_file(
@@ -29,8 +31,6 @@ webcam = cv2.VideoCapture(0)
 if not webcam.isOpened():
     print("Could not open webcam")
     exit()
-
-classes = ["man", "woman"]
 
 # loop through frames
 while webcam.isOpened():
@@ -71,11 +71,11 @@ while webcam.isOpened():
         # apply gender detection on face
         conf = model.predict(face_crop)[0]
         print(conf)
-        print(classes)
+        print(CLASSES)
 
         # get label with max accuracy
         idx = np.argmax(conf)
-        label = classes[idx]
+        label = CLASSES[idx]
 
         label = "{}: {:.2f}%".format(label, conf[idx] * 100)
 
