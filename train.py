@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from keras.optimizers import Adam
 from keras.preprocessing.image import ImageDataGenerator, img_to_array
-from keras.utils import plot_model, to_categorical
+from keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
 
 from model.smallervggnet import SmallerVGGNet
