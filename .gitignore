@@ -5,3 +5,4 @@ multiple.jpg
 # pixi environments
 .pixi/*
 !.pixi/config.toml
+*.pyc
