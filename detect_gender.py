@@ -1,21 +1,24 @@
 # author: Arun Ponnusamy
 # website: https://www.arunponnusamy.com
 
-from tensorflow.keras.utils import img_to_array
+import os
+
+import cv2
+import cvlib as cv
+import numpy as np
 from keras.models import load_model
 from keras.utils import get_file
-import numpy as np
-import cv2
-import os
-import cvlib as cv
+from tensorflow.keras.utils import img_to_array
 
 CLASSES = ("man", "woman")
 
 # download pre-trained model file (one-time download)
-MODEL_DOWNLOAD_LINK = "https://github.com/arunponnusamy/cvlib/releases/download/v0.2.0/gender_detection.model"
+MODEL_DLOAD_LINK = "https://github.com/arunponnusamy/cvlib/releases/download/v0.2.0/gender_detection.model"
+MODEL_FNAME = "gender_detection.model"
+
 model_path = get_file(
     "gender_detection.model",
-    MODEL_DOWNLOAD_LINK,
+    MODEL_DLOAD_LINK,
     cache_subdir="pre-trained",
     cache_dir=os.getcwd(),
 )
