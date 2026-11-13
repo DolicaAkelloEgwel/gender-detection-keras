@@ -1,28 +1,31 @@
 # author: Arun Ponnusamy
 # website: https://www.arunponnusamy.com
 
+import sys
+
 import cv2
 
-from detect_gender import detect_gender
+from detect_gender import GenderDetection
+
+gd = GenderDetection()
 
 # open webcam
 webcam = cv2.VideoCapture(0)
 
 if not webcam.isOpened():
     print("Could not open webcam")
-    exit()
+    sys.exit()
 
 # loop through frames
 while webcam.isOpened():
-
     # read frame from webcam
     status, frame = webcam.read()
 
     if not status:
         print("Could not read frame")
-        exit()
+        sys.exit()
 
-    frame = detect_gender(frame)
+    frame = gd.detect_gender(frame)
 
     # display output
     cv2.imshow("gender detection", frame)

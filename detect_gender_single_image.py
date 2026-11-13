@@ -5,16 +5,18 @@ import sys
 
 import cv2
 
-from detect_gender import detect_gender
+from detect_gender import GenderDetection
+
+gd = GenderDetection()
 
 # read input image
-image = cv2.imread("sample_input.jpg")
+image = cv2.imread("./sample/sample_input.jpg")
 
 if image is None:
     print("Could not read input image")
     sys.exit()
 
-image = detect_gender(image)
+image = gd.detect_gender(image)
 
 # display output
 cv2.imshow("gender detection", image)
