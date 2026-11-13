@@ -27,7 +27,8 @@ MODEL_PATH = get_file(
 
 
 class GenderDetection:
-    def __init__(self, model_path=MODEL_PATH):
+    def __init__(self, model_path: str = MODEL_PATH):
+
         # load the model
         self.model = load_model(model_path)
 
