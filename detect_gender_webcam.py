@@ -5,7 +5,7 @@ import sys
 
 import cv2
 
-from detect_gender import GenderDetection
+from gender_detection import GenderDetection
 
 gd = GenderDetection()
 
