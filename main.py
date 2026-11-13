@@ -48,7 +48,7 @@ if args.image:
     image = cv2.imread(args.image)
 
     if image is None:
-        print("Could not read input image")
+        print("Could not read input image at path:", args.image)
         sys.exit()
 
     _detect_gender_and_show(image)
