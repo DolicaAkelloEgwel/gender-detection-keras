@@ -1,9 +1,10 @@
 # author: Arun Ponnusamy
 # website: https://www.arunponnusamy.com
 
+import sys
+
 import cv2
 
-# import necessary packages
 from detect_gender import detect_gender
 
 # read input image
@@ -11,7 +12,7 @@ image = cv2.imread("sample_input.jpg")
 
 if image is None:
     print("Could not read input image")
-    exit()
+    sys.exit()
 
 image = detect_gender(image)
 
