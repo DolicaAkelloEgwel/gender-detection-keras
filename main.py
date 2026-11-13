@@ -38,7 +38,7 @@ else:
     gd = GenderDetection()
 
 
-def _detect_gender_and_show(image):
+def _detect_gender_and_show(image: cv2.typing.MatLike):
     image = gd.detect_gender(image)
     cv2.imshow("gender detection", image)
 
