@@ -13,23 +13,27 @@ from tensorflow.keras.utils import img_to_array
 CLASSES = ("man", "woman")
 
 # download pre-trained model file (one-time download)
-MODEL_DLOAD_LINK = "https://github.com/arunponnusamy/cvlib/releases/download/v0.2.0/gender_detection.model"
 MODEL_FNAME = "gender_detection.model"
+MODEL_DLOAD_LINK = (
+    f"https://github.com/arunponnusamy/cvlib/releases/download/v0.2.0/{MODEL_FNAME}"
+)
+CACHE_SUBDIR = "pre-trained"
 
 model_path = get_file(
-    "gender_detection.model",
+    MODEL_FNAME,
     MODEL_DLOAD_LINK,
-    cache_subdir="pre-trained",
+    cache_subdir=CACHE_SUBDIR,
     cache_dir=os.getcwd(),
 )
 
 # load pre-trained model
 model = load_model(model_path)
 
+
 def detect_gender(image: cv2.typing.MatLike) -> cv2.typing.MatLike:
 
     # detect faces in the image
-    face, confidence = cv.detect_face(image)
+    face, _ = cv.detect_face(image)
 
     # loop through detected faces
     for idx, f in enumerate(face):
@@ -58,7 +62,7 @@ def detect_gender(image: cv2.typing.MatLike) -> cv2.typing.MatLike:
         idx = np.argmax(conf)
         label = CLASSES[idx]
 
-        label = "{}: {:.2f}%".format(label, conf[idx] * 100)
+        label = f"{label}: {conf[idx] * 100:.2f}%"
 
         Y = startY - 10 if startY - 10 > 10 else startY + 10
 
