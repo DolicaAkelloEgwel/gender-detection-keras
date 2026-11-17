@@ -57,13 +57,11 @@ class GenderDetection:
 
             # apply gender detection on face
             conf = self.model.predict(face_crop)[0]
-            print(conf)
-            print(CLASSES)
+            print(f"Face {idx}: {CLASSES[0]} {conf[0]} / {CLASSES[1]} {conf[1]}")
 
             # get label with max accuracy
             idx = np.argmax(conf)
             label = CLASSES[idx]
-
             label = f"{label}: {conf[idx] * 100:.2f}%"
 
             Y = startY - 10 if startY - 10 > 10 else startY + 10
