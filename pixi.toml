@@ -6,9 +6,7 @@ platforms = ["win-64"]
 version = "0.1.0"
 
 [tasks]
-isort = { cmd = "isort . --skip ./.pixi", default-environment = "dev" }
-format-check = { cmd = "ruff check", default-environment = "dev" }
-format-fix = { cmd = "ruff check --fix", default-environment = "dev" }
+detect-gender = { cmd = "python main.py" }
 
 [dependencies]
 bzip2 = { version = "==1.0.8", build = "h8ffe710_4" }
